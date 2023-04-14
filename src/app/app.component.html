@@ -1,0 +1,56 @@
+ <!----------- inpOutp (8video Output Decorator)  -------------->
+
+<div class="container">
+  <div class="row ">
+
+    <div class="col-sm-12">
+      <p class="alert alert-info" *ngIf="msgFromChilds">
+        {{msgFromChilds}}
+      </p>
+      <p>
+          <app-child [msgFromChild]="fname" (getMsgFromChild)="onMsgFromChild($event)"></app-child>
+      </p>
+    </div>
+
+
+    <div class="col-sm-12">
+      <p class="alert alert-info" *ngIf="msgsend">
+        {{msgsend}}
+      </p>
+      <p>
+        <app-products (prdouctUpdate)="updateParent($event)"></app-products>
+      </p>
+    </div>
+
+
+    <div class="col-sm-12">
+      <p class=" alert alert-info" *ngIf="onmsgsend">
+        {{onmsgsend}}
+      </p>
+      <p>
+        <app-product-child (childMSG)="Onchild($event)"></app-product-child>
+      </p>
+    </div>
+
+
+    <div class="col-sm-12">
+      <p class="alert alert-info" *ngIf="msgInChildParent">
+        {{msgInChildParent}}
+    </p>
+      <div>
+        <app-child-parent (childtoparent)="childToParentMsg($event)"></app-child-parent>
+      </div>
+  </div>
+
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
